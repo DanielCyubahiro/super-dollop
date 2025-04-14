@@ -1,9 +1,7 @@
-import List from "@/components/List/List";
+import SpotlightPage from "@/pages/SpotlightPage";
 
 export default function HomePage() {
   return (
-    <>
-      <List/>
-    </>
+    <SpotlightPage />
   );
 }

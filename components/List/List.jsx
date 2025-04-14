@@ -6,9 +6,6 @@ import ListItem from "@/components/ListItem/ListItem";
 const List = () => {
   const { artPieces, isLoading, error, fetchArtPieces } = useArtPiecesStore(
     state => state);
-  useEffect(() => {
-    void fetchArtPieces();
-  }, [fetchArtPieces]);
 
   return isLoading
     ? <StyledMessage>Loading...</StyledMessage>

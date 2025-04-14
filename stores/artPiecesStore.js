@@ -16,5 +16,5 @@ export const useArtPiecesStore = create((set, get) => ({
     } catch (error) {
       set({ error, isLoading: false });
     }
-  }
+  },
 }))
