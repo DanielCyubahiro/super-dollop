@@ -12,7 +12,3 @@ export const ListItemContainerStyled = styled.div`
     justify-content: center;
     align-items: center;
 `
-
-export const StyledImage = styled(Image)`
-border-radius: 2rem;
-`
