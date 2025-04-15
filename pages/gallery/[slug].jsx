@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { useArtPiecesStore } from "@/stores/artPiecesStore";
 import ListItem from "@/components/ListItem/ListItem";
-import Link from "next/link";
 
 const ArtPieceDetailPage = () => {
 
@@ -9,8 +8,13 @@ const ArtPieceDetailPage = () => {
   const { slug } = router.query;
 
   const artPieces = useArtPiecesStore(state => state.artPieces);
+  const isLoading = useArtPiecesStore(state => state.isLoading);
+
   const selectedArtPiece = artPieces.find((item) => item.slug === slug);
 
+  if (!isLoading) {
+    console.log(selectedArtPiece);
+  }
   return <>
     <button onClick={() => router.back()}>
       Back
