@@ -1,14 +1,14 @@
 import {
+  StyledLink,
   StyledNavigationBar,
-  StyledNavigationItem,
 } from "@/components/Layout/Layout.styled";
 
 const Navigation = () => {
   return (
     <StyledNavigationBar>
-      <StyledNavigationItem href="/">Spotlight</StyledNavigationItem>
-      <StyledNavigationItem href="/gallery">Gallery</StyledNavigationItem>
-      <StyledNavigationItem href="/favorites">Favorites</StyledNavigationItem>
+      <StyledLink href="/">Spotlight</StyledLink>
+      <StyledLink href="/gallery">Gallery</StyledLink>
+      <StyledLink href="/favorites">Favorites</StyledLink>
     </StyledNavigationBar>
   );
 };

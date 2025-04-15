@@ -18,7 +18,7 @@ export const StyledNavigationBar = styled.nav`
     align-items: center;
 `
 
-export const StyledNavigationItem = styled(Link)`
+export const StyledLink = styled(Link)`
     text-decoration: none;
     color: black;
 `
