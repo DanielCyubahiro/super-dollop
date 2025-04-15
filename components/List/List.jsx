@@ -3,7 +3,7 @@ import { ListStyled, StyledMessage } from "@/components/List/List.styled";
 import ListItem from "@/components/ListItem/ListItem";
 
 const List = () => {
-  const { artPieces, isLoading, error, fetchArtPieces } = useArtPiecesStore(
+  const { artPieces, isLoading, error } = useArtPiecesStore(
     state => state);
 
   return isLoading
