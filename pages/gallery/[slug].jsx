@@ -12,8 +12,12 @@ const ArtPieceDetailPage = () => {
 
   const selectedArtPiece = artPieces.find((item) => item.slug === slug);
 
-  if (!isLoading) {
-    console.log(selectedArtPiece);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!selectedArtPiece) {
+    return <div>Art piece not found</div>;
   }
   return <>
     <button onClick={() => router.back()}>
