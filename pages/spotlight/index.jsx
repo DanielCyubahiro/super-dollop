@@ -10,7 +10,7 @@ const SpotlightPage = () => {
     if (!artPieces.length) {
       void fetchArtPieces();
     }
-  }, [fetchArtPieces]);
+  }, [fetchArtPieces,artPieces]);
   const artToSpotlight = artPieces[Math.floor(
     Math.random() * artPieces.length)];
   return artToSpotlight && (<ListItem piece={artToSpotlight} />);
