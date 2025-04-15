@@ -1,10 +1,8 @@
-import { useArtPiecesStore } from "@/stores/artPiecesStore";
 import ListItem from "@/components/ListItem/ListItem";
+import useRandomArtPiece from "@/hooks/useRandomArtPieace";
 
 const SpotlightPage = () => {
-  const artPieces = useArtPiecesStore((state) => state.artPieces);
-
-  const artToSpotlight = artPieces[Math.floor(Math.random() * artPieces.length)];
+  const artToSpotlight = useRandomArtPiece();
   return artToSpotlight && (<ListItem piece={artToSpotlight} />);
 };
 
