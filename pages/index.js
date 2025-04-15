@@ -3,7 +3,7 @@ import useRandomArtPiece from "@/hooks/useRandomArtPieace";
 
 const SpotlightPage = () => {
   const artToSpotlight = useRandomArtPiece();
-  return artToSpotlight && (<ListItem piece={artToSpotlight} />);
+  return artToSpotlight && (<ListItem piece={artToSpotlight} forSpotlight/>);
 };
 
 export default SpotlightPage;

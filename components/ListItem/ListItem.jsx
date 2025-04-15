@@ -6,7 +6,7 @@ import Image from "next/image";
 import FavoriteButton from "@/components/FavoriteButton/FavoriteButton";
 import { StyledLink } from "@/components/Layout/Layout.styled";
 
-const ListItem = ({ piece }) => {
+const ListItem = ({ piece, forSpotlight = false }) => {
   return (
     <ListItemContainerStyled>
       <FavoriteButton slug={piece.slug}>
@@ -22,11 +22,11 @@ const ListItem = ({ piece }) => {
             priority
           />
         </StyledImageContainer>
-        <p>title: {piece.name}</p>
+        {!forSpotlight && <p>title: {piece.name}</p>}
         <p>artist: {piece.artist}</p>
-        <p>year: {piece.year}</p>
-        <p>genre: {piece.genre}</p>
-        <p>colors: {piece.colors}</p>
+        {!forSpotlight && <p>year: {piece.year}</p>}
+        {!forSpotlight && <p>genre: {piece.genre}</p>}
+        {!forSpotlight && <p>colors: {piece.colors}</p>}
       </StyledLink>
     </ListItemContainerStyled>
   );
