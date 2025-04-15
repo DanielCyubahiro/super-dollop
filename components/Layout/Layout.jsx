@@ -1,7 +1,5 @@
 import Navigation from "@/components/Navigation/Navigation";
-import {
-  StyledMainContainer,
-} from "@/components/Layout/Layout.styled";
+import { StyledMainContainer } from "@/components/Layout/Layout.styled";
 
 const Layout = ({ children }) => {
   return (

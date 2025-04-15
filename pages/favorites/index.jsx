@@ -1,5 +1,8 @@
+import List from "@/components/List/List";
+
 const FavoritesPage = () => {
-  return <h1>Favorites Page</h1>;
+  return <List onlyFavorites={true} />;
+  ;
 };
 
 export default FavoritesPage;
