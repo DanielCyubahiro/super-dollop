@@ -1,5 +1,5 @@
 import ListItem from "@/components/ListItem/ListItem";
-import useRandomArtPiece from "@/hooks/useRandomArtPieace";
+import useRandomArtPiece from "@/hooks/useRandomArtPiece";
 
 const SpotlightPage = () => {
   const artToSpotlight = useRandomArtPiece();
@@ -7,3 +7,4 @@ const SpotlightPage = () => {
 };
 
 export default SpotlightPage;
+
