@@ -1,20 +1,51 @@
 import styled from "styled-components";
+import Link from "next/link";
 
 export const ListItemContainerStyled = styled.div`
-    background: hsl(0 0% 100%);
-    border-radius: 0.5rem;
-    border: 1px solid  hsl(240 3.7% 15.9% / 0.1);
-    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     padding: 1rem;
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-`
+    text-align: center;
+    width: 100%;
+`;
 
 export const StyledImageContainer = styled.div`
     position: relative;
+    padding-bottom: ${props => props.$dimensions
+            ? `${(props.$dimensions.height / props.$dimensions.width) * 100}%`
+            : "56.25%"};
+    border: 12px solid black;
+    
+    /* Inner shadow effect */
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.9),
+            inset -2px -2px 5px rgba(0, 0, 0, 0.9), 
+            0 0 0 1px rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    img {
+        border: 1px solid black;
+        object-fit: cover;
+        padding: 1rem;
+    }
+`;
+
+export const StyledImageLink = styled(Link)`
+    text-decoration: none;
+    color: black;
     width: 100%;
-    aspect-ratio: 1/1;
+    height: 100%;
+`
+
+export const StyledText = styled.p`
+    margin-top: 0.5rem;
+    color: dimgrey;
+    font-size: 0.8rem;
+    font-style: italic;
+`
+
+export const StyledName = styled.p`
+    color: dimgrey;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
 `

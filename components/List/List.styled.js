@@ -11,4 +11,5 @@ export const StyledList = styled.ul`
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    margin: 0 3rem;
 `
