@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-export const StyledMainContainer = styled.main`
-  padding: 1rem;
-`
-
 export const StyledNavigationBar = styled.nav`
     display: flex;
     justify-content: space-around;
@@ -21,4 +17,11 @@ export const StyledNavigationBar = styled.nav`
 export const StyledLink = styled(Link)`
     text-decoration: none;
     color: black;
+`
+
+export const StyledMainContainer = styled.main`
+    flex: 1;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 `
