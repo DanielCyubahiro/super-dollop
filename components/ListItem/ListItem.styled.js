@@ -12,3 +12,9 @@ export const ListItemContainerStyled = styled.div`
     justify-content: center;
     align-items: center;
 `
+
+export const StyledImageContainer = styled.div`
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+`

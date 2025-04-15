@@ -1,5 +1,4 @@
 import { useArtPiecesStore } from "@/stores/artPiecesStore";
-import { useEffect } from "react";
 import { ListStyled, StyledMessage } from "@/components/List/List.styled";
 import ListItem from "@/components/ListItem/ListItem";
 

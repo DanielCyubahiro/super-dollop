@@ -1,15 +1,26 @@
-import { ListItemContainerStyled } from "@/components/ListItem/ListItem.styled";
+import {
+  ListItemContainerStyled,
+  StyledImageContainer,
+} from "@/components/ListItem/ListItem.styled";
 import Image from "next/image";
-const ListItem = ({piece}) => {
+
+const ListItem = ({ piece }) => {
   return (
     <ListItemContainerStyled>
-      <Image src={piece.imageSource} width={800} height={500} ty />
+      <StyledImageContainer>
+        <Image
+          src={piece.imageSource}
+          fill
+          alt={piece.name}
+          priority
+        />
+      </StyledImageContainer>
       <p>Name: {piece.name}</p>
       <p>artist: {piece.artist}</p>
       <p>year: {piece.year}</p>
       <p>genre: {piece.genre}</p>
       <p>colors: {piece.colors}</p>
     </ListItemContainerStyled>
-  )
-}
+  );
+};
 export default ListItem;
