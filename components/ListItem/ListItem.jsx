@@ -15,7 +15,7 @@ const ListItem = ({ piece }) => {
           priority
         />
       </StyledImageContainer>
-      <p>Name: {piece.name}</p>
+      <p>title: {piece.name}</p>
       <p>artist: {piece.artist}</p>
       <p>year: {piece.year}</p>
       <p>genre: {piece.genre}</p>

@@ -5,7 +5,7 @@ export const StyledMessage = styled.p`
     text-align: center;
 `
 
-export const ListStyled = styled.ul`
+export const StyledList = styled.ul`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
