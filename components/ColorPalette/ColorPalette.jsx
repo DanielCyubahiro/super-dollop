@@ -5,7 +5,7 @@ import {
 
 const ColorPalette = ({ colors }) => {
   return <StyledColorPaletteContainer>
-    {colors.map(color => <StyledColorPalette $color={color} key={color}/>)}
+    {colors.map((color, index) => <StyledColorPalette $color={color} key={index} data-testid={`color-swatch-${color}`}/>)}
   </StyledColorPaletteContainer>;
 };
 export default ColorPalette;
