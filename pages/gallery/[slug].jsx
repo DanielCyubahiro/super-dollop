@@ -3,6 +3,7 @@ import { useArtPiecesStore } from "@/stores/artPiecesStore";
 import ListItem from "@/components/ListItem/ListItem";
 import { ChevronLeft } from 'lucide-react';
 import GhostButton from "@/components/Buttons/GhostButton/GhostButton";
+import Details from "@/components/Details/Details";
 
 const ArtPieceDetailPage = () => {
 
@@ -25,7 +26,7 @@ const ArtPieceDetailPage = () => {
     <GhostButton onClick={() => router.back()}>
       <ChevronLeft size={30} color="#000000" strokeWidth={3} /> Back
     </GhostButton>
-    <ListItem piece={selectedArtPiece} />
+    <Details piece={selectedArtPiece} />
   </>;
 };
 
