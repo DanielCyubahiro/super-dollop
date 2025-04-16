@@ -29,6 +29,5 @@ export const StyledSpotlightBackground = styled.div`
 export const StyledSpotlightFavButtonContainer = styled.div`
     display: flex;
     justify-content: center;
-    position: relative;
-    top: 18rem
+    min-height: 95vh;
 `
