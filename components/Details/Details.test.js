@@ -11,8 +11,8 @@ const mockPiece = {
   genre: 'Test Genre',
   dimensions: { width: 100, height: 100 },
   isFavorite: false,
-  colors: ['#000000', '#FFFFFF']
-
+  colors: ['#000000', '#FFFFFF'],
+  comments: [{id: 1, text: 'Test Comment 1', timestamp: new Date()}],
 };
 
 describe('Details Component', () => {
