@@ -1,8 +1,11 @@
 import { useArtPiecesStore } from "@/stores/artPiecesStore";
+import {
+  StyledFavoriteButton,
+} from "@/components/FavoriteButton/FavoriteButton.styled";
 
-const FavoriteButton = ({slug, children}) => {
+const FavoriteButton = ({ slug, children }) => {
   const toggleFavorite = useArtPiecesStore(state => state.toggleFavorite);
-  return <button onClick={() => toggleFavorite(slug)}>{children}</button>
-}
+  return <StyledFavoriteButton onClick={() => toggleFavorite(slug)}>{children}</StyledFavoriteButton>;
+};
 
 export default FavoriteButton;

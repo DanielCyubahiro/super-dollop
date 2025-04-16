@@ -5,6 +5,7 @@ import {
 } from "@/components/ListItem/ListItem.styled";
 import Image from "next/image";
 import FavoriteButton from "@/components/FavoriteButton/FavoriteButton";
+import { Heart } from 'lucide-react';
 
 const ListItem = ({ piece }) => {
   return (
@@ -22,7 +23,7 @@ const ListItem = ({ piece }) => {
         <StyledName>{piece.artist}</StyledName>
       </StyledImageLink>
       <FavoriteButton slug={piece.slug}>
-        {piece.isFavorite ? "Unlike" : "Like"}
+        {piece.isFavorite ? <><Heart size={'18'} fill={'white'}/>Remove from Favorites</> : <><Heart size={'18'} />Add to Favorites</> }
       </FavoriteButton>
     </ListItemContainerStyled>
   );
