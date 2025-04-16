@@ -8,6 +8,8 @@ import {
   StyledDetailsData,
   StyledDetailsTable,
 } from "@/components/Details/Details.styled";
+import { Heart } from "lucide-react";
+import FavoriteButton from "@/components/Buttons/FavoriteButton/FavoriteButton";
 
 const Details = ({ piece }) => {
   return (
@@ -35,6 +37,9 @@ const Details = ({ piece }) => {
           {piece.year}
         </StyledDetailsData>
       </StyledDetailsTable>
+      <FavoriteButton slug={piece.slug}>
+        {piece.isFavorite ? <><Heart size={'18'} fill={'white'}/>Remove from Favorites</> : <><Heart size={'18'} />Add to Favorites</> }
+      </FavoriteButton>
     </StyledDetailsContainer>
   );
 };

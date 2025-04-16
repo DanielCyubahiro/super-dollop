@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { useArtPiecesStore } from "@/stores/artPiecesStore";
-import ListItem from "@/components/ListItem/ListItem";
-import { ChevronLeft } from 'lucide-react';
+import { ChevronLeft } from "lucide-react";
 import GhostButton from "@/components/Buttons/GhostButton/GhostButton";
 import Details from "@/components/Details/Details";
 

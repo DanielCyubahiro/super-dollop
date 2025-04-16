@@ -18,7 +18,3 @@ export const StyledDetailsData = styled.div`
     padding: 0.3rem;
     font-size: 0.9rem;
 `
-
-export const StyledDetailsDataValue = styled.div`
-    
-`
