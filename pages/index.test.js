@@ -1,34 +1,36 @@
 import { render, screen } from '@testing-library/react';
-import useRandomArtPiece from '@/hooks/useRandomArtPiece';
-import SpotlightPage from '@/pages/index';
+import GalleryPage from '@/pages/gallery';
+import { useArtPiecesStore } from '@/stores/artPiecesStore';
 
-jest.mock('@/stores/artPiecesStore');
-jest.mock('@/hooks/useRandomArtPiece', () => ({
-  __esModule: true,
-  default: jest.fn()
+jest.mock('@/stores/artPiecesStore', () => ({
+  useArtPiecesStore: jest.fn()
 }));
 
-describe('Spotlight Page', () => {
-  const mockArtPiece = {
-    slug: 'test-piece',
-    imageSource: '/test-image.jpg',
-    artist: 'Test Artist',
-    isFavorite: false
-  };
+describe('Gallery Page', () => {
+  const mockArtPieces = [
+    {
+      slug: 'piece-1',
+      imageSource: '/image1.jpg',
+      name: 'Piece 1',
+      artist: 'Artist 1',
+      isFavorite: false,
+    }
+  ];
 
   beforeEach(() => {
-    useRandomArtPiece.mockReturnValue(mockArtPiece);
+    useArtPiecesStore.mockImplementation((selector) =>
+      selector({
+        artPieces: mockArtPieces,
+        isLoading: false,
+        error: null,
+      })
+    );
   });
 
-  it('renders spotlight component with random art piece', () => {
-    render(<SpotlightPage />);
-
-    expect(screen.getByTestId('spotlight-bg')).toBeInTheDocument();
-  });
-
-  it('renders favorite button for the spotlighted piece', () => {
-    render(<SpotlightPage />);
-
-    expect(screen.getByRole('button')).toBeInTheDocument();
+  it('renders list of all art pieces', () => {
+    render(<GalleryPage />);
+    expect(screen.getByText('Piece 1')).toBeInTheDocument();
+    expect(screen.getByText('Artist 1')).toBeInTheDocument();
+    expect(screen.getByRole('img')).toBeInTheDocument();
   });
 });

@@ -6,8 +6,8 @@ import {
 const Navigation = () => {
   return (
     <StyledNavigationBar>
-      <StyledLink href="/">Spotlight</StyledLink>
-      <StyledLink href="/gallery">Gallery</StyledLink>
+      <StyledLink href="/spotlight">Spotlight</StyledLink>
+      <StyledLink href="/">Gallery</StyledLink>
       <StyledLink href="/favorites">Favorites</StyledLink>
     </StyledNavigationBar>
   );
