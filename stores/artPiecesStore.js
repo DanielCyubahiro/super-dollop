@@ -19,7 +19,7 @@ export const useArtPiecesStore = create(
             }
             const data = await response.json();
             set({
-              artPieces: data.map(piece => ({ ...piece, isFavorite: false })),
+              artPieces: data.map(piece => ({ ...piece, isFavorite: false, comments: [] })),
               isLoading: false,
             });
           } catch (error) {
@@ -31,6 +31,14 @@ export const useArtPiecesStore = create(
         set(state => ({
           artPieces: state.artPieces.map(piece => piece.slug === slug
             ? { ...piece, isFavorite: !piece.isFavorite }
+            : piece,
+          ),
+        }));
+      },
+      addComment: (slug, newComment) => {
+        set(state => ({
+          artPieces: state.artPieces.map(piece => piece.slug === slug
+            ? { ...piece, comments: [...piece.comments, newComment] }
             : piece,
           ),
         }));

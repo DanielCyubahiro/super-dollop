@@ -11,6 +11,8 @@ import {
 import { Heart } from "lucide-react";
 import FavoriteButton from "@/components/Buttons/FavoriteButton/FavoriteButton";
 import ColorPalette from "@/components/ColorPalette/ColorPalette";
+import CommentsList from "@/components/CommentsList/CommentsList";
+import CommentForm from "@/components/CommentForm/CommentForm";
 
 const Details = ({ piece }) => {
   return (
@@ -45,6 +47,12 @@ const Details = ({ piece }) => {
       <FavoriteButton slug={piece.slug}>
         {piece.isFavorite ? <><Heart size={'18'} fill={'white'}/>Remove from Favorites</> : <><Heart size={'18'} />Add to Favorites</> }
       </FavoriteButton>
+      <br/>
+      <hr/>
+      <br/>
+      Comments
+      <CommentForm slug={piece.slug}/>
+      <CommentsList slug={piece.slug}/>
     </StyledDetailsContainer>
   );
 };
