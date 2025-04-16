@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
 import { useArtPiecesStore } from "@/stores/artPiecesStore";
 import ListItem from "@/components/ListItem/ListItem";
+import { ChevronLeft } from 'lucide-react';
+import GhostButton from "@/components/Buttons/GhostButton/GhostButton";
 
 const ArtPieceDetailPage = () => {
 
@@ -20,9 +22,9 @@ const ArtPieceDetailPage = () => {
     return <div>Art piece not found</div>;
   }
   return <>
-    <button onClick={() => router.back()}>
-      Back
-    </button>
+    <GhostButton onClick={() => router.back()}>
+      <ChevronLeft size={30} color="#000000" strokeWidth={3} /> Back
+    </GhostButton>
     <ListItem piece={selectedArtPiece} />
   </>;
 };

@@ -4,7 +4,7 @@ import {
   StyledImageLink, StyledName, StyledText,
 } from "@/components/ListItem/ListItem.styled";
 import Image from "next/image";
-import FavoriteButton from "@/components/FavoriteButton/FavoriteButton";
+import FavoriteButton from "@/components/Buttons/FavoriteButton/FavoriteButton";
 import { Heart } from 'lucide-react';
 
 const ListItem = ({ piece }) => {

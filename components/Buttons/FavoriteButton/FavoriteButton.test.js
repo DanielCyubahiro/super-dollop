@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import FavoriteButton from "@/components/FavoriteButton/FavoriteButton";
+import FavoriteButton from "@/components/Buttons/FavoriteButton/FavoriteButton";
 import { useArtPiecesStore } from "@/stores/artPiecesStore";
 
 jest.mock("@/stores/artPiecesStore");
