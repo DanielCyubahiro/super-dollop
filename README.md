@@ -17,7 +17,7 @@ A modern online art gallery built with Next.js showcasing my full-stack developm
 
 ## Live Demo
 
-[View Live Demo](https://super-dollop-fjhbc3dyr-daniels-projects-d58a8d33.vercel.app/)
+[View Live Demo](https://super-dollop.vercel.app)
 
 ## Installation
 
