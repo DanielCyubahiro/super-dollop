@@ -3,9 +3,9 @@ import {
   StyledFavoriteButton,
 } from "@/components/Buttons/FavoriteButton/FavoriteButton.styled";
 
-const FavoriteButton = ({ slug, children }) => {
+const FavoriteButton = ({ slug, transparent, children }) => {
   const toggleFavorite = useArtPiecesStore(state => state.toggleFavorite);
-  return <StyledFavoriteButton onClick={() => toggleFavorite(slug)}>{children}</StyledFavoriteButton>;
+  return <StyledFavoriteButton $transparent={transparent} onClick={() => toggleFavorite(slug)}>{children}</StyledFavoriteButton>;
 };
 
 export default FavoriteButton;

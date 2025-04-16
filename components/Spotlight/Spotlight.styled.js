@@ -25,3 +25,10 @@ export const StyledSpotlightBackground = styled.div`
         background-color: rgba(0, 0, 0, 0.5);
     }
 `
+
+export const StyledSpotlightFavButtonContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 18rem
+`
