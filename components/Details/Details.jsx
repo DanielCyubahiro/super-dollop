@@ -10,6 +10,7 @@ import {
 } from "@/components/Details/Details.styled";
 import { Heart } from "lucide-react";
 import FavoriteButton from "@/components/Buttons/FavoriteButton/FavoriteButton";
+import ColorPalette from "@/components/ColorPalette/ColorPalette";
 
 const Details = ({ piece }) => {
   return (
@@ -35,6 +36,10 @@ const Details = ({ piece }) => {
         <StyledDetailsData>
           <strong>Year:</strong>
           {piece.year}
+        </StyledDetailsData>
+        <StyledDetailsData>
+          <strong>Color Palette:</strong>
+          <ColorPalette colors={piece.colors} />
         </StyledDetailsData>
       </StyledDetailsTable>
       <FavoriteButton slug={piece.slug}>

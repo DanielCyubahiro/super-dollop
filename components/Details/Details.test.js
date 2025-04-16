@@ -10,7 +10,9 @@ const mockPiece = {
   year: '2023',
   genre: 'Test Genre',
   dimensions: { width: 100, height: 100 },
-  isFavorite: false
+  isFavorite: false,
+  colors: ['#000000', '#FFFFFF']
+
 };
 
 describe('Details Component', () => {
