@@ -2,8 +2,8 @@ import {
   StyledGhostButton
 } from "@/components/Buttons/GhostButton/GhostButton.styled";
 
-const GhostButton = ({children}) => {
-  return <StyledGhostButton>
+const GhostButton = ({children, onClick}) => {
+  return <StyledGhostButton onClick={onClick}>
     {children}
   </StyledGhostButton>;
 };
