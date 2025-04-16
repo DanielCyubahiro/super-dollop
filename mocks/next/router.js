@@ -1,11 +1,15 @@
-const router = {
-  push: jest.fn(),
-  replace: jest.fn(),
-  prefetch: jest.fn().mockResolvedValue(),
-  back: jest.fn(),
-  query: {},
-};
+import next from "next/router";
 
-module.exports = {
-  useRouter: () => router,
-};
+const useRouter = jest.spyOn(next, 'useRouter');
+
+export function mockNextUseRouter(props) {
+  useRouter.mockImplementation(() => ({
+    route: '/',
+    pathname: '/',
+    query: {},
+    asPath: '/',
+    back: jest.fn(),
+    push: jest.fn(),
+    ...props,
+  }));
+}

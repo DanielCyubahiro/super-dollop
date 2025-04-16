@@ -1,41 +1,52 @@
-import { render, screen } from "@testing-library/react";
-import ArtPieceDetailPage from "@/pages/gallery/[slug]";
-import { useRouter } from "next/router";
-import { useArtPiecesStore } from "@/stores/artPiecesStore";
+// pages/gallery/[slug].test.js
+import { render, screen } from '@testing-library/react';
+import { useRouter } from 'next/router';
+import { useArtPiecesStore } from '@/stores/artPiecesStore';
+import ArtPieceDetailPage from '@/pages/gallery/[slug]';
 
-jest.mock("next/router", () => ({
-  useRouter: jest.fn(),
+jest.mock('next/router', () => ({
+  useRouter: jest.fn()
 }));
+jest.mock('@/stores/artPiecesStore');
 
-jest.mock("@/stores/artPiecesStore");
+describe('Art Piece Detail Page', () => {
+  const mockArtPiece = {
+    slug: 'test-piece',
+    imageSource: '/test-image.jpg',
+    name: 'Test Art Piece',
+    artist: 'Test Artist',
+    year: '2023',
+    genre: 'Test Genre',
+    dimensions: { width: 100, height: 100 },
+    isFavorite: false
+  };
 
-test("renders details of selected art piece", () => {
-  useRouter.mockReturnValue({ query: { slug: "art-1" }, back: jest.fn() });
+  beforeEach(() => {
+    useRouter.mockImplementation(() => ({
+      query: { slug: 'test-piece' },
+      back: jest.fn()
+    }));
 
-  useArtPiecesStore.mockImplementation((selector) =>
-    selector({
-      artPieces: [
-        {
-          slug: "art-1",
-          name: "Art 1",
-          artist: "Artist 1",
-          imageSource: "/img1.jpg",
-          year: 2021,
-          genre: "Abstract",
-          colors: ["#fff"],
-          isFavorite: true,
-        },
-      ],
+    useArtPiecesStore.mockImplementation((selector) => selector({
+      artPieces: [mockArtPiece],
       isLoading: false,
-    })
-  );
+      error: null
+    }));
+  });
 
-  render(<ArtPieceDetailPage />);
+  it('renders all art piece details', () => {
+    render(<ArtPieceDetailPage />);
 
-  expect(screen.getByAltText("Art 1")).toBeInTheDocument();
-  expect(screen.getByText(/title: Art 1/i)).toBeInTheDocument();
-  expect(screen.getByText(/artist: Artist 1/i)).toBeInTheDocument();
-  expect(screen.getByText(/year: 2021/i)).toBeInTheDocument();
-  expect(screen.getByText(/genre: Abstract/i)).toBeInTheDocument();
-  expect(screen.getByRole("button", { name: /Back/i })).toBeInTheDocument();
+    expect(screen.getByRole('img')).toBeInTheDocument();
+    expect(screen.getByText(mockArtPiece.name)).toBeInTheDocument();
+    expect(screen.getByText(`${mockArtPiece.artist}`)).toBeInTheDocument();
+    expect(screen.getByText(`${mockArtPiece.genre}`)).toBeInTheDocument();
+    expect(screen.getByText(`${mockArtPiece.year}`)).toBeInTheDocument();
+  });
+
+  it('renders back button', () => {
+    render(<ArtPieceDetailPage />);
+
+    expect(screen.getByRole('button', { name: /back/i })).toBeInTheDocument();
+  });
 });

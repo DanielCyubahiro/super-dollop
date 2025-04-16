@@ -16,7 +16,11 @@ const SpotlightPage = () => {
         artistName={artToSpotlight.artist}
       />
       <StyledSpotlightFavButtonContainer>
-        <FavoriteButton slug={artToSpotlight.slug} transparent>
+        <FavoriteButton
+          data-testid="spotlight-favorite-button"
+          slug={artToSpotlight.slug}
+          transparent
+        >
           {artToSpotlight.isFavorite ? (
             <Heart size={"18"} fill={"white"} />
           ) : (

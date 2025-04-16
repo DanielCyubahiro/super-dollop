@@ -5,6 +5,7 @@ import {
 const Spotlight = ({ backgroundImage, artistName }) => {
   return (
     <StyledSpotlightBackground
+      data-testid="spotlight-bg"
       $backgroundImage={backgroundImage}
       data-before-text={ 'Artist: ' + artistName}
     />
