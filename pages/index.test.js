@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import GalleryPage from '@/pages/gallery';
+import GalleryPage from '@/pages';
 import { useArtPiecesStore } from '@/stores/artPiecesStore';
 
 jest.mock('@/stores/artPiecesStore', () => ({

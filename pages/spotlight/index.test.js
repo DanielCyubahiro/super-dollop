@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import useRandomArtPiece from '@/hooks/useRandomArtPiece';
-import SpotlightPage from '@/pages';
+import SpotlightPage from '@/pages/spotlight';
 
 jest.mock('@/stores/artPiecesStore');
 jest.mock('@/hooks/useRandomArtPiece', () => ({

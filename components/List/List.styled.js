@@ -6,10 +6,8 @@ export const StyledMessage = styled.p`
 `
 
 export const StyledList = styled.ul`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
     gap: 1rem;
-    margin: 0 3rem;
+    margin: 2rem;
 `
